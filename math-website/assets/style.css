@@ -1,0 +1,37 @@
+
+:root{
+  --bg:#0b1220;
+  --card:#0f172a;
+  --ink:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#60a5fa;
+  --accent-2:#a78bfa;
+  --ring: rgba(96,165,250,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:980px;margin:0 auto;padding:24px}
+.nav{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:8px 0 24px}
+.nav .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+.brand svg{height:28px;width:28px}
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b1220;font-weight:600;box-shadow:0 8px 30px var(--ring)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.card{background:linear-gradient(180deg,#0f172a,#0b1220);border:1px solid #243045;border-radius:16px;padding:18px;box-shadow:0 8px 40px rgba(0,0,0,.25)}
+.card h3{margin:0 0 8px}
+hr{border:none;border-top:1px solid #253046;margin:24px 0}
+footer{opacity:.75;font-size:.9rem;margin:32px 0}
+kbd{background:#111827;border:1px solid #1f2937;padding:2px 6px;border-radius:6px}
+.code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#111827;border:1px solid #1f2937;border-radius:12px;padding:10px;display:block}
+.note{color:var(--muted)}
+h1,h2,h3{line-height:1.15}
+.hero{display:grid;gap:16px;grid-template-columns:1.2fr .8fr;align-items:center}
+.hero .blob{background:radial-gradient(120px 120px at 30% 30%,rgba(96,165,250,.18),transparent),
+             radial-gradient(140px 140px at 70% 60%,rgba(167,139,250,.18),transparent);
+             border-radius:24px;height:200px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+blockquote{border-left:3px solid var(--accent);padding:8px 16px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;border:1px solid #223047}
+td,th{padding:10px;border:1px solid #223047;text-align:left}
+p{line-height:1.6}

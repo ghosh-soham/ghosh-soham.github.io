@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Math Notes</title>
+  <meta name="description" content="A clean math website with MathJax."/>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="/assets/style.css"/>
+  
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[', '\\]']],
+    tags: 'ams'
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+    <div class="brand">
+      <img src="/assets/favicon.svg" alt="" width="28" height="28"/>
+      <span>Math Notes</span>
+    </div>
+    <div style="display:flex; gap:14px">
+      <a href="/" class="note">Home</a>
+      <a href="/posts/" class="note">Posts</a>
+      <a href="https://github.com/" class="note">GitHub</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Welcome to <em>Math Notes</em></h1>
+      <p>A minimalist, fast site for publishing proofs, problem sets, and research notes — with beautiful \(\LaTeX\) rendering via MathJax.</p>
+      <p><a class="btn" href="/posts/">Browse Posts</a></p>
+      <p class="note">Inline math: $e^{i\pi}+1=0$ · Display math: $$\int_0^1 x^n \, dx = \frac{1}{n+1}$$</p>
+    </div>
+    <div class="blob"></div>
+  </section>
+
+  <hr/>
+
+  <section class="grid">
+    <article class="card">
+      <h3>Getting Started</h3>
+      <p>Duplicate the template post and start writing. No build tools needed.</p>
+      <p><a href="/posts/post-template.html">Open the template →</a></p>
+    </article>
+    <article class="card">
+      <h3>Sample Article</h3>
+      <p>See a sample post with theorems, proofs, and equations.</p>
+      <p><a href="/posts/sample-article.html">Read the sample →</a></p>
+    </article>
+    <article class="card">
+      <h3>Site Structure</h3>
+      <p>Static HTML pages. You can add as many posts as you like under <code class="code">/posts/</code>.</p>
+    </article>
+  </section>
+
+  <footer>
+    Built with plain HTML + MathJax. © <span id="year"></span>
+  </footer>
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

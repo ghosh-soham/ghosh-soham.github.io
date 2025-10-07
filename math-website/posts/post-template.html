@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Post Template · Math Notes</title>
+  <meta name="description" content="A clean math website with MathJax."/>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="/assets/style.css"/>
+  
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[', '\\]']],
+    tags: 'ams'
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+    <div class="brand">
+      <img src="/assets/favicon.svg" alt="" width="28" height="28"/>
+      <span>Math Notes</span>
+    </div>
+    <div style="display:flex; gap:14px">
+      <a href="/" class="note">Home</a>
+      <a href="/posts/" class="note">Posts</a>
+      <a href="https://github.com/" class="note">GitHub</a>
+    </div>
+  </nav>
+
+  <article class="card">
+    <h1>Post Title Here</h1>
+    <p class="note">Author · Date</p>
+    <hr/>
+    <h2>Abstract</h2>
+    <p>Summarize the main result in 2–3 sentences.</p>
+
+    <h2>1. Statement</h2>
+    <p>For example, here is a theorem-like statement:</p>
+    <blockquote><strong>Theorem.</strong> For all $n\in\mathbb{N}$, $$\sum_{k=1}^n k = \frac{n(n+1)}{2}.$$</blockquote>
+
+    <h2>2. Proof</h2>
+    <p>Sketch the proof clearly. You can reference equations like (1):</p>
+    <p>Let us define $$S_n = 1+2+\cdots+n. \\tag{1}$$
+    Pair the sequence from both ends, etc.</p>
+
+    <h2>3. Examples</h2>
+    <p>Try $n=5$:
+    $$S_5 = 1+2+3+4+5 = 15.$$</p>
+
+    <h2>References</h2>
+    <ul>
+      <li>Your favorite textbook or paper.</li>
+    </ul>
+  </article>
+
+  <footer>
+    Built with plain HTML + MathJax. © <span id="year"></span>
+  </footer>
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
