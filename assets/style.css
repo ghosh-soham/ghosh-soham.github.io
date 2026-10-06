@@ -153,6 +153,7 @@ h2 {
   color: var(--fg-muted);
 }
 h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+* + h2 { margin-top: 2.2rem; }
 h3 {
   font-size: 1.2rem; font-weight: 600; line-height: 1.3;
   margin: 1.6rem 0 .5rem;
@@ -189,20 +190,11 @@ ul.bullets li + li { margin-top: .4rem; }
 }
 .pub-links a:hover { text-decoration: none; border-color: var(--accent); }
 
-/* Dated rows (talks, conferences, awards, education) ----------------------- */
-.rows { list-style: none; margin: 0; padding: 0; }
-.rows li {
-  display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: .15rem 1.25rem;
-  padding: .55rem 0;
-  border-top: 1px solid var(--rule);
-}
-.rows li:last-child { border-bottom: 1px solid var(--rule); }
-.rows .when {
-  font-family: var(--font-sans); font-size: .9rem; font-variant-numeric: tabular-nums;
-  color: var(--fg-muted); padding-top: .2rem;
-}
-.rows .what { min-width: 0; }
-.rows .note { display: block; color: var(--fg-muted); font-size: 1rem; }
+/* Compact lists (talks, conferences) ---------------------------------------- */
+ul.compact { margin: 0; padding-left: 1.15rem; max-width: 72ch; }
+ul.compact li { margin: 0 0 .3rem; }
+ul.compact .note { color: var(--fg-muted); }
+.content h2 + ul.compact { margin-top: -.25rem; }
 
 /* Course table -------------------------------------------------------------- */
 .table-wrap { overflow-x: auto; }
@@ -244,7 +236,6 @@ table.courses .sections { font-family: var(--font-sans); font-size: .82rem; colo
   .rail .name { font-size: 1.4rem; }
   .rail .role { margin-bottom: .6rem; }
   .contact { grid-column: 1 / -1; margin-top: .75rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
-  .rows li { grid-template-columns: 1fr; gap: .05rem; }
   .pub-title { font-size: 1.05rem; }
 }
 

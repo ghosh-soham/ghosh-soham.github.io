@@ -6,7 +6,8 @@ Static site (plain HTML and CSS, no build step) for GitHub Pages.
 
 | File | Contents |
 | --- | --- |
-| `index.html` | About, research interests, publications and preprints, invited talks, conferences and workshops, awards, education |
+| `index.html` | About, research interests, publications and preprints |
+| `talks.html` | Invited talks, conferences and workshops |
 | `teaching.html` | Teaching record (TA and grading), mentoring and outreach, refereeing |
 | `404.html` | Not-found page served by GitHub Pages |
 | `assets/style.css` | All styling (one light theme; fonts from Google Fonts with system fallbacks) |
@@ -31,8 +32,8 @@ site works from any folder, as a user site, or as a project site.
   (sidebar and About paragraph) plus the footer in both HTML files.
 - **Papers.** Add a new `<li class="pub">` block at the top of the `<ol class="pubs">` list in
   `index.html`, numbered one higher than the current first entry.
-- **Talks, conferences, awards, courses.** Each is a plain list or table row; copy an existing
-  row and edit it. Lists are kept in reverse chronological order.
+- **Talks, conferences, courses.** Each is a plain list item (`talks.html`) or table row
+  (`teaching.html`); copy an existing one and edit it. Lists are kept in reverse chronological order.
 
 ## Publishing (the site is not live yet)
 
