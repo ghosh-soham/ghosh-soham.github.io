@@ -10,7 +10,8 @@ Static site (plain HTML and CSS, no build step) for GitHub Pages.
 | `talks.html` | Invited talks, conferences and workshops |
 | `teaching.html` | Teaching record (TA and grading), mentoring and outreach, refereeing |
 | `404.html` | Not-found page served by GitHub Pages |
-| `assets/style.css` | All styling (one light theme; fonts from Google Fonts with system fallbacks) |
+| `assets/style.css` | All styling: light and dark themes as one token set; fonts from Google Fonts with system fallbacks |
+| `assets/theme.js` | The light/dark toggle in the top bar (choice remembered in the browser; otherwise follows the system setting) |
 | `assets/favicon.svg` | Browser-tab icon |
 | `files/Soham_Ghosh_CV.pdf` | The CV linked from every page |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are (no Jekyll build) |
@@ -31,7 +32,9 @@ site works from any folder, as a user site, or as a project site.
 - **CV.** Replace `files/Soham_Ghosh_CV.pdf` and update the two "updated October 2026" strings
   (sidebar and About paragraph) plus the footer in both HTML files.
 - **Papers.** Add a new `<li class="pub">` block at the top of the `<ol class="pubs">` list in
-  `index.html`, numbered one higher than the current first entry.
+  `index.html`, numbered one higher than the current first entry. Each paper's abstract sits in a
+  `<details class="abstract">` block; inline math is written as `\( ... \)` and rendered by MathJax,
+  which `index.html` loads from a CDN.
 - **Talks, conferences, courses.** Each is a plain list item (`talks.html`) or table row
   (`teaching.html`); copy an existing one and edit it. Lists are kept in reverse chronological order.
 

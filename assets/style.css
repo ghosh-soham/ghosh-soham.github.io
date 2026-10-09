@@ -1,8 +1,9 @@
 /* ==========================================================================
    Soham Ghosh — personal academic site
-   Layout: a slim top bar (name + two tabs + CV) over a two-column page:
-   a narrow contact rail on the left, a reading column on the right.
-   The columns stack on phones. Single light theme, printed-page feel.
+   Layout: a slim top bar (name, tabs, CV link, theme toggle) over a two-column
+   page: a narrow contact rail on the left, a reading column on the right.
+   The columns stack on phones. Light and dark themes share one token set;
+   the dark values apply with the system setting or the toggle in the top bar.
    ========================================================================== */
 
 :root {
@@ -17,6 +18,7 @@
   --rule-strong: #c8ced6;
   --accent: #1f4e8c;
   --accent-ink: #163a69;
+  --on-accent: #ffffff;
   --tag-bg: #eef3fa;
 
   /* Type */
@@ -27,6 +29,35 @@
   --wrap: 1040px;
   --gutter: clamp(16px, 4vw, 40px);
   --rail: 232px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #14171b;
+    --bg-rail: #191d22;
+    --fg: #e3e6ea;
+    --fg-muted: #9aa3ae;
+    --rule: #2a3038;
+    --rule-strong: #3b434d;
+    --accent: #8fb6ea;
+    --accent-ink: #b4ccf2;
+    --on-accent: #10141a;
+    --tag-bg: #1c2634;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14171b;
+  --bg-rail: #191d22;
+  --fg: #e3e6ea;
+  --fg-muted: #9aa3ae;
+  --rule: #2a3038;
+  --rule-strong: #3b434d;
+  --accent: #8fb6ea;
+  --accent-ink: #b4ccf2;
+  --on-accent: #10141a;
+  --tag-bg: #1c2634;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -58,7 +89,7 @@ a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-o
 
 .skip-link {
   position: absolute; left: 0; top: -100px;
-  padding: .5rem .75rem; background: var(--accent); color: #fff;
+  padding: .5rem .75rem; background: var(--accent); color: var(--on-accent);
   font-family: var(--font-sans); z-index: 10;
 }
 .skip-link:focus { top: 0; }
@@ -72,8 +103,10 @@ a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-o
   font-family: var(--font-sans);
 }
 .site-header .wrap {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: .5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  column-gap: 1.5rem; row-gap: .25rem;
   min-height: 3.5rem;
   padding-block: .5rem;
 }
@@ -92,6 +125,27 @@ a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-o
 }
 .site-nav a:hover { color: var(--fg); text-decoration: none; }
 .site-nav a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--accent); }
+
+/* Theme toggle: shows a moon in light mode, a sun in dark mode. */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.1rem; height: 2.1rem; padding: 0;
+  border: 1px solid var(--rule); border-radius: 999px;
+  background: transparent; color: var(--fg-muted);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--fg); border-color: var(--rule-strong); }
+.theme-toggle svg {
+  width: 1.05rem; height: 1.05rem;
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+}
+.theme-toggle .icon-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* --------------------------------------------------------------------------
    Page grid
@@ -181,7 +235,11 @@ ul.bullets li + li { margin-top: .4rem; }
 .pub-title { font-weight: 600; font-size: 1.12rem; line-height: 1.35; display: block; }
 .pub-meta { display: block; margin-top: .15rem; }
 .pub-venue { font-style: italic; }
-.pub-links { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; font-family: var(--font-sans); font-size: .82rem; }
+.pub-links {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .5rem;
+  margin-top: .4rem;
+  font-family: var(--font-sans); font-size: .82rem;
+}
 .pub-links a {
   display: inline-block; padding: .1rem .5rem;
   border: 1px solid var(--rule); border-radius: 999px;
@@ -189,6 +247,36 @@ ul.bullets li + li { margin-top: .4rem; }
   letter-spacing: .01em;
 }
 .pub-links a:hover { text-decoration: none; border-color: var(--accent); }
+
+/* Abstract disclosure: a pill in the links row; when open it takes the full
+   width and the abstract appears beneath it. */
+.abstract { min-width: 0; }
+.abstract[open] { flex-basis: 100%; }
+.abstract summary {
+  list-style: none; cursor: pointer; user-select: none;
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .1rem .55rem .1rem .5rem;
+  border: 1px solid var(--rule); border-radius: 999px;
+  color: var(--fg-muted); letter-spacing: .01em;
+}
+.abstract summary::-webkit-details-marker { display: none; }
+.abstract summary::after {
+  content: ""; width: .4em; height: .4em; margin-top: -.2em;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.abstract[open] summary::after { transform: rotate(225deg); margin-top: .2em; }
+.abstract summary:hover { color: var(--fg); border-color: var(--rule-strong); }
+.abstract p {
+  font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.5;
+  color: var(--fg);
+  margin: .6rem 0 .2rem; padding: .05rem 0 .05rem .85rem;
+  border-left: 2px solid var(--rule);
+  max-width: 68ch;
+}
+/* MathJax's hidden assistive MathML is wider than the drawn formula; keep it
+   inside its container so it cannot widen the page on narrow screens. */
+mjx-assistive-mml { max-width: 100% !important; }
 
 /* Compact lists (talks, conferences) ---------------------------------------- */
 ul.compact { margin: 0; padding-left: 1.15rem; max-width: 72ch; }
@@ -226,6 +314,10 @@ table.courses .sections { font-family: var(--font-sans); font-size: .82rem; colo
    -------------------------------------------------------------------------- */
 @media (max-width: 760px) {
   body { font-size: 1.08rem; }
+  .site-header .wrap { grid-template-columns: 1fr auto; }
+  .site-header .brand { grid-column: 1; grid-row: 1; }
+  .site-header .theme-toggle { grid-column: 2; grid-row: 1; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; }
   .layout { grid-template-columns: 1fr; gap: 2rem; padding-block: 1.75rem 2.5rem; }
   .rail {
     position: static;

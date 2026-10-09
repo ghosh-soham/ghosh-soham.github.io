@@ -10,10 +10,13 @@
   <meta property="og:type" content="website">
   <meta property="og:description" content="Mathematics Ph.D. candidate at the University of Washington: algebraic geometry, Brauer groups and moduli, tropical and non-archimedean geometry, birational geometry.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/theme.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" async></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -29,6 +32,10 @@
         <li><a href="files/Soham_Ghosh_CV.pdf">CV</a></li>
       </ul>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
   </div>
 </header>
 
@@ -74,7 +81,6 @@
         <a href="https://www.simonsfoundation.org/2025/07/23/first-class-of-simons-dissertation-fellows-in-mathematics-announced/">Simons Dissertation Fellowship in Mathematics</a>.
       </p>
       <p>
-        I am interested in algebraic geometry with an arithmetic flavour and in tropical geometry.
         Before coming to Seattle, I completed my Bachelor of Mathematics (Honors) at the
         Indian Statistical Institute, Bangalore.
       </p>
@@ -86,13 +92,18 @@
     </section>
 
     <section id="interests" aria-labelledby="interests-h">
-      <h2 id="interests-h">Research interests</h2>
-      <ul class="bullets">
-        <li><strong>Algebraic geometry with an arithmetic flavour:</strong> Brauer groups, Azumaya algebras, twisted sheaves, moduli and stacks, K-theory.</li>
-        <li><strong>Tropical and non-archimedean geometry:</strong> intersection theory of non-archimedean cycles and currents, tropical cohomology, tropical abelian varieties, and Fourier–Mukai transforms.</li>
-        <li><strong>Birational geometry:</strong> positivity conditions on bundles and foliations, and the resulting characterizations of special Fano varieties.</li>
-        <li><strong>Commutative algebra</strong> arising from algebraic geometry.</li>
-      </ul>
+      <h2 id="interests-h">Research</h2>
+      <p>
+        My research is in algebraic geometry with an arithmetic flavour. I am especially
+        interested in Brauer groups, Azumaya algebras and twisted sheaves, in the moduli spaces
+        and stacks they give rise to, and in algebraic K-theory. A second strand of my work is
+        tropical and non-archimedean geometry, where I study the intersection theory of
+        non-archimedean cycles and currents, tropical cohomology, tropical abelian varieties,
+        and Fourier–Mukai transforms. I also work in birational geometry, on positivity
+        conditions for bundles and foliations and the characterizations of special Fano
+        varieties that follow from them, and I enjoy the commutative-algebraic side of all of
+        these questions.
+      </p>
     </section>
 
     <section id="papers" aria-labelledby="papers-h">
@@ -109,16 +120,28 @@
           <span class="pub-num">5.</span>
           <div>
             <span class="pub-title">Torelli theorems for moduli stacks and twisted moduli spaces of vector bundles</span>
-            <span class="pub-meta">with Ting Gong and <a href="https://max.lieblich.us">Max Lieblich</a>. <span class="pub-venue">Preprint, 2026.</span></span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2609.29011">arXiv:2609.29011</a></span>
+            <span class="pub-meta">with <a href="https://sites.google.com/view/tinggong">Ting Gong</a> and <a href="https://max.lieblich.us">Max Lieblich</a>. <span class="pub-venue">Preprint, 2026.</span></span>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2609.29011">arXiv:2609.29011</a>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>We prove Torelli theorems for moduli of vector bundles in two complementary settings. In the first part, over an arbitrary field, we recover the coarse curve of a smooth, proper, geometrically connected, tame Deligne–Mumford curve of coarse genus at least two from its full fixed-determinant moduli stack in rank at least three. We also prove a fixed-degree version under an explicit compatibility hypothesis. The method is intrinsic to the stack: faithful special-linear linearizations recover Picard stacks, and determinants of tangent complexes recover the canonical principal polarization. In the second part, we study moduli spaces of twisted vector bundles on smooth projective curves. A twisted Hitchin construction recovers the curve in specified characteristic and degree ranges, with separate hypotheses for recovery of the twisting class. For rank two with trivial determinant, we recover the curve and the Brauer class from the moduli stack through an ordered Kummer cover and its polarized Jacobian torsor. For odd determinant on hyperelliptic curves in characteristic different from two, residual gerbes give a relative Desale–Ramanan construction without an actual determinant line bundle over the ground field. An intrinsic polarized Fano torsor recovers the curve and the class, and a corrected polarization obstruction recovers the determinant gerbe. We also give a twisted Newstead construction in genus two, with an explicit descent condition for its converse, and period–index applications.</p>
+              </details>
+            </div>
           </div>
         </li>
         <li class="pub">
           <span class="pub-num">4.</span>
           <div>
             <span class="pub-title">Characterizing contractions and weighted blowdowns</span>
-            <span class="pub-meta">with Tyson Klingner. <span class="pub-venue">Preprint, 2026.</span></span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2609.04023">arXiv:2609.04023</a></span>
+            <span class="pub-meta">with <a href="https://tysonklingner.github.io/">Tyson Klingner</a>. <span class="pub-venue">Preprint, 2026.</span></span>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2609.04023">arXiv:2609.04023</a>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>This paper gives a partial answer to a question of Dan Abramovich: consider a proper morphism \(f : \mathcal{X} \to \mathcal{Z}\) with connected fibers, between smooth separated Deligne–Mumford stacks, which defines an isomorphism away from a smooth effective Cartier divisor \(\mathcal{E} \subseteq \mathcal{X}\). Then, is \(f\) a weighted blowup? We confirm that \(f\) is an ordinary smooth blowup when \(\mathcal{X}\) and \(\mathcal{Z}\) are smooth separated schemes of finite type over \(\mathbb{C}\), and when \(f : \mathcal{X} \to \mathcal{Z}\) is a representable morphism of smooth separated Deligne–Mumford stacks. Further, we show that \(f\) is a weighted blowup when \(\mathcal{X}\) and \(\mathcal{Z}\) are smooth separated Deligne–Mumford surfaces, i.e., \(\dim \mathcal{X} = \dim \mathcal{Z} = 2\). As an application we determine when a reduction morphism between Hassett moduli stacks of weighted stable curves is given by a blowup along a smooth center.</p>
+              </details>
+            </div>
           </div>
         </li>
         <li class="pub">
@@ -126,7 +149,13 @@
           <div>
             <span class="pub-title">Kovács’ conjecture on characterization of projective space and hyperquadrics</span>
             <span class="pub-meta"><span class="pub-venue">Preprint, 2026.</span></span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2601.10055">arXiv:2601.10055</a></span>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2601.10055">arXiv:2601.10055</a>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>We prove Kovács’ conjecture that claims that if the \(p\)th exterior power of the tangent bundle of a smooth complex projective variety contains the \(p\)th exterior power of an ample vector bundle then the variety is either projective space or the \(p\)-dimensional quadric hypersurface. We also prove a similar characterization involving symmetric powers instead of exterior powers. This provides a common generalization of Mori, Wahl, Cho–Sato, Andreatta–Wiśniewski, Kobayashi–Ochiai, and Araujo–Druel–Kovács type characterizations of such varieties.</p>
+              </details>
+            </div>
           </div>
         </li>
         <li class="pub">
@@ -134,7 +163,13 @@
           <div>
             <span class="pub-title">Tropical Poincaré bundle, Fourier–Mukai transform, and a generalized Poincaré formula</span>
             <span class="pub-meta">with <a href="https://sites.math.washington.edu/~farbod">Farbod Shokrieh</a>. <span class="pub-venue">Preprint, 2025.</span></span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2503.12835">arXiv:2503.12835</a></span>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2503.12835">arXiv:2503.12835</a>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>We construct a tropical analogue of the Poincaré bundle and prove a (cohomological) Fourier–Mukai transform for real tori with integral structures. We then prove a tropical analogue of Beauville’s generalized Poincaré formula for polarized abelian varieties. Some consequences include a geometric Riemann–Roch theorem for tropical abelian varieties, as well as a tropical Poincaré–Prym formula which was recently conjectured by Röhrle and Zakharov.</p>
+              </details>
+            </div>
           </div>
         </li>
         <li class="pub">
@@ -142,7 +177,14 @@
           <div>
             <span class="pub-title">The Zariski covering number for vector spaces and modules</span>
             <span class="pub-meta"><span class="pub-venue">Communications in Algebra</span> 50 (2022), no. 5, 1994–2017.</span>
-            <span class="pub-links"><a href="https://doi.org/10.1080/00927872.2021.1995741">Journal (DOI)</a> <a href="https://arxiv.org/abs/2108.12853">arXiv:2108.12853</a></span>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1080/00927872.2021.1995741">Journal (DOI)</a>
+              <a href="https://arxiv.org/abs/2108.12853">arXiv:2108.12853</a>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>Given a \(K\)-vector space \(V\), let \(\sigma(V,K)\) denote the covering number, i.e. the smallest (cardinal) number of proper subspaces whose union covers \(V\). Analogously, define \(\sigma(M,R)\) for a module \(M\) over a unital commutative ring \(R\); this includes the covering numbers of Abelian groups, which are extensively studied in the literature. Recently, Khare–Tikaradze [Comm. Algebra, in press] showed for several classes of rings \(R\) and \(R\)-modules \(M\) that \(\sigma(M,R)=\min_{\mathfrak{m}\in S_M} |R/\mathfrak{m}| + 1\), where \(S_M\) is the set of maximal ideals \(\mathfrak{m}\) such that \(\dim_{R/\mathfrak{m}}(M/\mathfrak{m}M)\geq 2\). (That \(\sigma(M,R)\leq\min_{\mathfrak{m}\in S_M}|R/\mathfrak{m}|+1\) is straightforward.) Our first main result extends this equality to all \(R\)-modules with small Jacobson radical and finite dual Goldie dimension. We next introduce a topological counterpart for finitely generated \(R\)-modules \(M\) over rings \(R\), whose ‘some’ residue fields are infinite, which we call the Zariski covering number \(\sigma_\tau(M,R)\). To do so, we first define the “induced Zariski topology” \(\tau\) on \(M\), and now define \(\sigma_\tau(M,R)\) to be the smallest (cardinal) number of proper \(\tau\)-closed subsets of \(M\) whose union covers \(M\). We first show that our choice of topology implies that \(\sigma_\tau(M,R)\leq\sigma(M,R)\), the covering number. We then show our next main result: \(\sigma_\tau(M,R)=\min_{\mathfrak{m}\in S_M} |R/\mathfrak{m}|+1\), for all finitely generated \(R\)-modules \(M\) for which (a) the dual Goldie dimension is finite, and (b) \(\mathfrak{m}\notin S_M\) whenever \(R/\mathfrak{m}\) is finite. As a corollary, this alternately recovers the above formula for the covering number \(\sigma(M,R)\) of the aforementioned finitely generated modules. We also extend these topological studies to general finitely generated \(R\)-modules, using the notion of \(\kappa\)-Baire spaces.</p>
+              </details>
+            </div>
           </div>
         </li>
       </ol>
