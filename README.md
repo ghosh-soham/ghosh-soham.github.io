@@ -40,22 +40,14 @@ site works from any folder, as a user site, or as a project site.
 
 ## Publishing (the site is not live yet)
 
-GitHub Pages is intentionally not enabled, so nothing is public until you turn it on.
+GitHub Pages is intentionally not enabled, so nothing is public until you turn it on. The
+account is `ghosh-soham` and the repository is `ghosh-soham.github.io`, so once Pages is on
+the site is served at <https://ghosh-soham.github.io>.
 
 1. Review the site (locally, or via the preview link shared in the Claude session).
 2. Merge the `claude/wonderful-hypatia-9jp1y2` branch into `main`.
 3. In the repository, open **Settings → Pages**, choose **Deploy from a branch**, pick `main`
    and the `/ (root)` folder, and save. The site appears a minute or two later.
 
-### Getting the address `sohamghosh.github.io`
-
-A GitHub *user site* is always served at `<username>.github.io`, from a repository with exactly
-that name. The account is currently `Gsoham13`, so to use `sohamghosh.github.io`:
-
-1. Rename the GitHub account to `sohamghosh` (**Settings → Account → Change username**), if
-   that username is still available.
-2. Rename this repository to `sohamghosh.github.io` (**Settings → General → Repository name**).
-3. Enable Pages as above.
-
-Until the repository name matches `<username>.github.io`, GitHub treats it as a *project
-site* and would serve it at `https://<username>.github.io/<repository-name>/` instead.
+A GitHub *user site* is served at `<username>.github.io` only while the repository is named
+exactly that; if either name changes again, rename the other to match.
