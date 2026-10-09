@@ -47,14 +47,14 @@ GitHub Pages is intentionally not enabled, so nothing is public until you turn i
 3. In the repository, open **Settings → Pages**, choose **Deploy from a branch**, pick `main`
    and the `/ (root)` folder, and save. The site appears a minute or two later.
 
-### Getting the address `soham-ghosh.github.io`
+### Getting the address `sohamghosh.github.io`
 
 A GitHub *user site* is always served at `<username>.github.io`, from a repository with exactly
-that name. The account is currently `Gsoham13`, so to use `soham-ghosh.github.io`:
+that name. The account is currently `Gsoham13`, so to use `sohamghosh.github.io`:
 
-1. Rename the GitHub account to `soham-ghosh` (**Settings → Account → Change username**), if
+1. Rename the GitHub account to `sohamghosh` (**Settings → Account → Change username**), if
    that username is still available.
-2. Rename this repository to `soham-ghosh.github.io` (**Settings → General → Repository name**).
+2. Rename this repository to `sohamghosh.github.io` (**Settings → General → Repository name**).
 3. Enable Pages as above.
 
 Until the repository name matches `<username>.github.io`, GitHub treats it as a *project
